@@ -1,22 +1,10 @@
-import { Router } from 'express'
+import { Router } from 'express';
+import campaigns from './campaigns';
 
-const router = new Router()
+const router = new Router();
 
-/**
- * @apiDefine master Master access only
- * You must pass `access_token` parameter or a Bearer Token authorization header
- * to access this endpoint.
- */
-/**
- * @apiDefine admin Admin access only
- * You must pass `access_token` parameter or a Bearer Token authorization header
- * to access this endpoint.
- */
-/**
- * @apiDefine user User access only
- * You must pass `access_token` parameter or a Bearer Token authorization header
- * to access this endpoint.
- */
+router.use('/campaigns', campaigns);
+
 /**
  * @apiDefine listParams
  * @apiParam {String} [q] Query to search.
@@ -26,4 +14,4 @@ const router = new Router()
  * @apiParam {String[]} [fields] Fields to be returned.
  */
 
-export default router
+export default router;

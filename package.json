@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "node .",
+    "debug": "node --inspect .",
     "test": "jest",
     "coverage": "npm test -- --coverage",
     "postcoverage": "opn coverage/lcov-report/index.html",
