@@ -6,7 +6,8 @@ import api from './api';
 import { importCollectionsFromJSON, clearCollections } from './services/db-utilities';
 import path from 'path';
 
-const app = express(apiRoot, api);
+const staticFolder = path.join(process.cwd(), 'public', 'static');
+const app = express(apiRoot, api, staticFolder);
 const server = http.createServer(app);
 
 mongoose.connect(mongo.uri)

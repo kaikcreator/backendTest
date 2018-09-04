@@ -7,7 +7,7 @@ import { errorHandler as queryErrorHandler } from 'querymen';
 import { errorHandler as bodyErrorHandler } from 'bodymen';
 import { env } from '../../config';
 
-export default (apiRoot, routes) => {
+export default (apiRoot, routes, staticRoute) => {
   const app = express();
 
   /* istanbul ignore next */
@@ -16,6 +16,9 @@ export default (apiRoot, routes) => {
     app.use(compression());
     app.use(morgan('dev'));
   }
+
+  //serve static files
+  app.use(express.static(staticRoute));
 
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
