@@ -17,7 +17,7 @@ export default (apiRoot, routes, staticRoute) => {
     app.use(morgan('dev'));
   }
 
-  //serve static files
+  // serve static files
   app.use(express.static(staticRoute));
 
   app.use(bodyParser.urlencoded({ extended: false }));
